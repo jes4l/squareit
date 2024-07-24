@@ -1,0 +1,32 @@
+{
+    "name": "PlayMode",
+    "rootNamespace": "",
+    "references": [
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner",
+        "NewAssembly",
+        "UnityEditor.UI",
+        "UnityEditor.UI.EditorTests",
+        "Unity.TextMeshPro.Editor.Tests",
+        "Unity.TextMeshPro",
+        "UnityEngine.UI",
+        "UnityEngine.UI.Tests",
+        "PhotonUnityNetworking.Utilities.PhotonPlayer.Editor",
+        "PhotonUnityNetworking.Editor",
+        "PhotonRealtime",
+        "PhotonUnityNetworking"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

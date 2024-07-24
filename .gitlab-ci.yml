@@ -1,0 +1,23 @@
+default:
+  image: mcr.microsoft.com/dotnet/sdk:5.0
+
+  before_script:
+    - dotnet --version
+    - dotnet tool install --global dotnet-format --version 5.1.225507
+    - export PATH="$PATH:/root/.dotnet/tools"
+
+test:
+  script:
+    - |
+      format_errors=$(dotnet format --folder "/builds/jesalvadgama/comp4024_group4/prototypes/Group Project/Assets/Scripts" --exclude .git --check --verbosity diagnostic || true)
+      format_errors+=$(dotnet format --folder "/builds/jesalvadgama/comp4024_group4/prototypes/Group Project/Assets/Tests" --exclude .git --check --verbosity diagnostic || true)
+      if [[ $format_errors == *"error"* ]]; then
+        echo "**Formatting errors found. Displaying error locations:**"
+        echo "$format_errors" | awk -F':' '{print "**File:** " $1 ", **Line:** " $2 ", **Character:** " $3 ", **Error:** " $4}'
+        error_count=$(echo "$format_errors" | grep -c "error")
+        echo "**Total number of errors:** $error_count"
+        exit 1
+      else
+        echo "**No formatting errors found.**"
+        exit 0
+      fi
