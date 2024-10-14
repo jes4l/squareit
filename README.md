@@ -1,5 +1,7 @@
 # SquareIt
 
+![Logo](assets/logo.png)
+
 SquareIt is an educational game designed for 11- to 14-year-olds that combines competitive gameplay with learning. Players can compete with friends, classmates, random opponents, or bots while answering curriculum-based questions. The goal is to gain territory on a grid by answering questions correctly and quickly.
 
 ## Table of Contents
